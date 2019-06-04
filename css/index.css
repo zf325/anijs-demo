@@ -1,0 +1,111 @@
+html,body{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+ul,li,p{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.header{
+    height:64px;
+}
+.layout{
+    top:64px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.sidebar{
+    float: left;
+    width:200px;
+    height: 100%;
+    background-color:#0051a0;
+    color:#fff;
+    cursor: pointer;
+}
+
+.sidebar li,.sidebar b{
+    padding: 12px 12px 12px 20px;
+}
+.sidebar b{
+    display: block;
+    font-size: 20px;
+}
+.sidebar b.current{
+    background-color:#00386f;
+}
+.sidebar li{
+    font-size: 16px;
+}
+.content{
+
+    float: left;
+    width: calc(100% - 200px);   
+    height: 100%;
+    width: -moz-calc(100% - 200px);
+    width: -webkit-calc(100% - 200px);
+    position: relative;
+   
+}
+.node-head{
+    position: absolute;
+    width:140px;
+    height: 140px;
+    border-radius: 140px;
+    top: 50%;left:50%;
+    margin-left:-70px;margin-top:-240px;
+    background-color: #0373e0;
+    /* line-height: 140px; */
+    
+
+}
+.node-head span{
+    display: block;
+    width: 80px;
+    height: 60px;
+    font-size: 18px;
+    color:#fff;
+    font-weight: bold;
+    position: absolute;
+    top:50%;left: 50%;
+    margin-top: -28px;
+    margin-left: -36px;
+
+}
+.node-2{
+    position: absolute;
+    width:80px;
+    height: 80px;
+    border-radius: 80px;
+    top: 50%;left:50%;
+
+    /* margin-left:-70px;margin-top:-240px; */
+}
+.node-2 span{
+    display: block;
+    width: 50px;
+    height: 36px;
+    color: #fff;
+    font-weight: bold;
+    position: absolute;
+    top:50%;left: 50%;
+    margin-top: -15px;
+    margin-left: -16px;
+}
+.yellow{background-color: #dbb002;  }
+.purple{background-color: #cd03da;}
+.red{background-color: #b6051a;}
+.green{background-color: #02d6b1;}
+.orange{background-color: #d53f03;}
+.marketplance{
+    margin-left:200px;margin-top:-240px;
+}
+.person{  margin-left:0px;margin-top:-440px;}
+.negative{ margin-left:-240px;margin-top:-320px;}
+.sentiment{ margin-left:-237px;margin-top:-88px;}
+.company{ margin-left: 62px;margin-top: 12px;}
+.hide{display: none;}
