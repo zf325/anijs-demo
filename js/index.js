@@ -102,5 +102,54 @@ $(function(){
 
     });
 
-    
-})
+   
+    function randomPoints(long,wide,r,size){
+        var buf = [];
+        if(long <= r) throw new Error('long must > r');
+        if(wide <= r) throw new Error('wide must > r');
+
+       
+        // if(buf.length =)
+
+        while(buf.length < size){
+          var x = Math.ceil((long - 2*r) * Math.random());
+          var y = Math.ceil((wide - 2*r) * Math.random());
+          if(buf.length == 0) {
+            buf.push({x,y});
+            continue;
+          }
+          if(buf.every(function(item){return (x-item.x)*(x-item.x) + (y-item.y)*(y-item.y) > 4*r*r})){
+            buf.push({x,y});
+          }
+        }
+
+        return buf;
+    }
+
+    var $parent = $("#three-nodes");
+    var size = $parent.children("div").length;
+    var long = $parent.width();
+    var wide = $parent.height();
+    var r = 20;
+
+    var points = randomPoints(long,wide,r,size);
+
+    $parent.children("div").each(function(index,ele ){
+        
+        $(ele).css({top:points[index]["y"],left:points[index]["x"]});
+    });
+
+    node2_company.click(function(){
+      $parent.children("div").toggleClass('hide');
+      $parent.children("div").toggleClass('fadeInUp animated');
+        
+      // do something when animation ends
+      $parent.children("div").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(e){
+       
+       // trick to execute the animation again
+        $(e.target).removeClass('fadeInUp animated');
+      
+      });
+    });
+
+});
